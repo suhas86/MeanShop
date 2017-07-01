@@ -1,0 +1,21 @@
+extends layout
+
+block content
+ if myCart.totalQuantity>0
+    
+    h4 Total Quantity #{myCart.totalQuantity} 
+    h4 Sub Total #{myCart.subTotal}
+    p
+      a(href='http://localhost:3000/order/checkout') Checkout
+      each i in myCart.items 
+        h3= "Product Name "+i.item.name
+        h4= "Price "+i.price
+        p= "Quantity "+i.quantity
+        p 
+         a(href='/cart/removeProduct/'+i.item._id) Remove
+ else
+    p
+      a(href='http://localhost:3000/products/all') No Items. Start Shopping
+
+
+     

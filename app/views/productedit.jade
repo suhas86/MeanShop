@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Product Update | My Shop
+  body
+    section.container
+      .login
+        h1 Update Product
+        form(method='post', action='http://localhost:3000/products/'+product._id+'/update')
+        
+          p
+            input(type='text', name='name', value="#{product.name}", placeholder='Product Name', required='')
+          p
+            input(type='number', name='price', value="#{product.price}", placeholder='Price', required='')
+           p
+            input(type='text', name='shortDescription', value="#{product.shortDescription}", placeholder='Short Description', required='')
+          p
+            textarea(type='text',rows='4', cols='50',  name='fullDescription', placeholder='Full Description', required='') #{product.fullDescription}  
+             
+          p
+            input(type='text', name='seller', value="#{product.seller}", placeholder='Seller', required='')
+          p.submit
+            input(type='submit', name='', value='Update Product')

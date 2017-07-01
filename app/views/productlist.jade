@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Product List | My Shop
+  body
+    p 
+         a(href='/products/create/screen/') Create Product
+
+    p(style='float:right;margin:10px;') 
+         a(href='../users/logout/') Logout     
+     each i in products 
+        h3= i.name
+        p=i.shortDescription
+        h4=i.price
+        p=i.fullDescription
+        b=i.seller
+        p 
+         a(href='/products/editproduct/screen/'+i._id) Edit
+        p 
+         a(href='/products/deleteProduct/'+i._id) Delete 

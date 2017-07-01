@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= 'My Shop'
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+
+  body
+
+p
+  a(href='http://localhost:3000/products/all') Home  
+p
+  a(href='http://localhost:3000/cart/cartList') Cart   
+if user!=null    
+  p(style='float:right;margin:10px;') 
+         a(href='../users/logout/') Logout
+else
+  p(style='float:right;margin:10px;')
+         a(href='../users/login/screen') Sign In 
+  p(style='float:right;margin:10px;') 
+         a(href='../users/signup/screen') Sign Up
+         
+block content

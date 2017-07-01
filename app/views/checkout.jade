@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+ h4 Total Quantity #{myCart.totalQuantity} 
+ h4 Sub Total #{myCart.subTotal}
+ 
+
+    each i in myCart.items 
+        h3= "Product Name "+i.item.name
+        h4= "Price "+i.price
+        p= "Quantity "+i.quantity
+       
+
+
+ h3 Checkout
+ p We support only cash on delivery
+        form(method='post', action='http://localhost:3000/order/placeOrder')
+         
+          p
+            input(type='number', name='phoneNumber', value='', placeholder='mobile number', required='')
+           p
+            input(type='text', name='address1', value='', placeholder='Address 1', required='')
+          p
+            input(type='text', name='address2', value='', placeholder='Address 2', required='')
+          p
+            input(type='text', name='city', value='', placeholder='City', required='')
+          p
+            input(type='text', name='state', value='', placeholder='State', required='')  
+          p
+            input(type='number', name='zip', value='', placeholder='Zipcode', required='')
+          p.submit
+            input(type='submit', name='', value='Place Order')        

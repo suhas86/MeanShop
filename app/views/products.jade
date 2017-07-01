@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    each i in products 
+        h3= i.name
+        p=i.shortDescription
+        h4=i.price
+        p=i.fullDescription
+        b=i.seller
+        p 
+         a(href='/cart/addtocart/'+i._id) Add to cart 
+
+
+        
